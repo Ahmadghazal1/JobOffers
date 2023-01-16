@@ -1,0 +1,58 @@
+﻿@model JobsOffers.Models.Job
+
+@{
+    ViewBag.Title = "حذف الوظيفة";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>حدف الوظيفة</h2>
+
+<h3>هل أنت متأكد من حذف الوظيفة ؟</h3>
+<div>
+    <h4>Job</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Catrgory.CatrgoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Catrgory.CatrgoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobImg)
+        </dt>
+
+        <dd>
+            <img src="~/Uploads/@Html.DisplayFor(model=>model.JobImg)" alt="Alternate Text" class="thumbnail" width="48px" height="48px" />
+
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("العودة الى الوظائف", "Index")
+        </div>
+    }
+</div>

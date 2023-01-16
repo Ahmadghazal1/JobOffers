@@ -1,0 +1,29 @@
+﻿@model JobsOffers.Models.ApplyForJob
+@{
+    ViewBag.Title = "DetailsOfJob";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>DetailsOfJob</h2>
+
+<dl class="dl-horizontal">
+    
+    <dt>@Html.DisplayNameFor(model=>model.Job.JobTitle)</dt>
+    <dd>@Html.DisplayFor(model=>model.Job.JobTitle)</dd>  
+
+    <dt>@Html.DisplayNameFor(model=>model.User.UserType)</dt>
+    <dd>@Html.DisplayFor(model => model.User.UserType)</dd>   
+    <dt>
+        @Html.DisplayNameFor(model=>model.Message)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Message)
+
+    </dd>
+
+
+
+
+
+
+</dl>
